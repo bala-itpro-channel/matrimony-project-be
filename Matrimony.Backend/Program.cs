@@ -1,11 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using NLog.Web;
 
 namespace Matrimony.Backend
 {
@@ -13,7 +9,22 @@ namespace Matrimony.Backend
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            // Inject logger
+            var logger = NLogBuilder
+                .ConfigureNLog("nlog.config")
+                .GetCurrentClassLogger();
+            try
+            {
+                logger.Info("Initializing application...");
+                // Bootstrapping app
+                CreateHostBuilder(args).Build().Run();
+            }
+            catch (Exception ex)
+            {
+                // Log the error on bootstrapping
+                logger.Error(ex, "Application stopped because of exception.");
+                throw ex;
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -21,8 +32,8 @@ namespace Matrimony.Backend
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    //NLog 
+                    webBuilder.UseNLog();
                 });
     }
-
-
 }

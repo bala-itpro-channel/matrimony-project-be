@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{469C3A58-4EBA-4AD4-AB53-14E49BC7325A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Matrimony.Backend/Controllers/WeatherForecastController.cs">
+    <Files>
+      <File FileName="Matrimony.Backend/appsettings.json" Line="1" Column="1" />
+      <File FileName="Matrimony.Backend/Program.cs" Line="6" Column="28" />
+      <File FileName="Matrimony.Backend/Controllers/WeatherForecastController.cs" Line="16" Column="12" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Matrimony.Backend" expanded="True">
+            <Node name="Matrimony.Backend" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="WeatherForecastController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Matrimony.Backend PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

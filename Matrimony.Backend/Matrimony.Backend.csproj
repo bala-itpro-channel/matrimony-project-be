@@ -8,4 +8,7 @@
   <ItemGroup>
     <None Include="..\gitignore.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.3" />
+  </ItemGroup>
 </Project>
