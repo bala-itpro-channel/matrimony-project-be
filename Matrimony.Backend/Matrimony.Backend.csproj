@@ -5,4 +5,7 @@
   </PropertyGroup>
 
 
+  <ItemGroup>
+    <None Include="..\gitignore.txt" />
+  </ItemGroup>
 </Project>

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bala/Samples/matrimony-project-backend/Matrimony.Backend/Matrimony.Backend/Matrimony.Backend.csproj",
+      "projectUniqueName": "/Users/bala/Samples/matrimony-project-be/Matrimony.Backend/Matrimony.Backend.csproj",
       "projectName": "Matrimony.Backend",
-      "projectPath": "/Users/bala/Samples/matrimony-project-backend/Matrimony.Backend/Matrimony.Backend/Matrimony.Backend.csproj",
+      "projectPath": "/Users/bala/Samples/matrimony-project-be/Matrimony.Backend/Matrimony.Backend.csproj",
       "packagesPath": "/Users/bala/.nuget/packages/",
-      "outputPath": "/Users/bala/Samples/matrimony-project-backend/Matrimony.Backend/Matrimony.Backend/obj/",
+      "outputPath": "/Users/bala/Samples/matrimony-project-be/Matrimony.Backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/bala/.config/NuGet/NuGet.Config"

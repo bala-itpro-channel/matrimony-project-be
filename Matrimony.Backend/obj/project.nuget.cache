@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OwOKWLiPiCkd8igYe4WWSFdUrvY9n52OJpio9skbMF7JRlcF62gZiCUAwt2jiF4DfAVvyOAx7NEUJB86G2y1Cg==",
+  "dgSpecHash": "Zj4SyyV3j5TXmi3FaSlZpNXHhtsf/PpY5aVp1rlJ9y/fXBx4sLbiUJkw+NMWAkOOQEMTtfJiwoDxVHyV0ZmxLA==",
   "success": true,
-  "projectFilePath": "/Users/bala/Samples/matrimony-project-backend/Matrimony.Backend/Matrimony.Backend/Matrimony.Backend.csproj",
+  "projectFilePath": "/Users/bala/Samples/matrimony-project-be/Matrimony.Backend/Matrimony.Backend.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
