@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Matrimony.Backend.Models;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -11,6 +11,7 @@ using NLog;
 
 namespace Matrimony.Backend.Controllers
 {
+    [Authorize]
     [Route("api/profile")]
     [ApiController]
     public class ProfileController : ControllerBase
@@ -77,7 +78,6 @@ namespace Matrimony.Backend.Controllers
             return Ok("Update the profile successfully");
         }
 
-        [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> Delete(int id = 0)
         {
