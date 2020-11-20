@@ -16,15 +16,15 @@ namespace Matrimony.Backend.Controllers
     [ApiController]
     public class ProfileController : ControllerBase
     {
-        private readonly MatrimonyDBContext _db;
+        private readonly IProfileRepository _profileRepo;
         private readonly ILogger<ProfileController> _logger;
 
         public ProfileController(
             ILogger<ProfileController> logger,
-            MatrimonyDBContext db)
+            IProfileRepository profileRepo)
         {
             _logger = logger;
-            _db = db;
+            _profileRepo = profileRepo;
         }
 
         // Action methods
@@ -33,7 +33,7 @@ namespace Matrimony.Backend.Controllers
         {
             try
             {
-                return _db.Profiles.ToList();
+                return _profileRepo.GetAllProfile();
             }
             catch (Exception ex)
             {
@@ -52,13 +52,9 @@ namespace Matrimony.Backend.Controllers
                 return BadRequest(ModelState);
             }
 
-            _db.Profiles.Add(profile);
+            // _logger.LogInformation($"New profile added - {profile.FullName}");
 
-            await _db.SaveChangesAsync();
-
-            _logger.LogInformation($"New profile added - {profile.FullName}");
-
-            return Ok(profile);
+            return Ok(_profileRepo.Add(profile));
         }
 
         [HttpPut]
@@ -71,9 +67,7 @@ namespace Matrimony.Backend.Controllers
 
             // _db.Profiles.Remove(profile);
             // _db.Entry(profile).State = EntityState.Modified;  //Modify everything except id
-            _db.Entry(profile).Property("Email").IsModified = true;
-
-            await _db.SaveChangesAsync();
+            _profileRepo.Update(profile);
 
             return Ok("Update the profile successfully");
         }
@@ -81,13 +75,13 @@ namespace Matrimony.Backend.Controllers
         [Route("{id}")]
         public async Task<IActionResult> Delete(int id = 0)
         {
-            Profile profile = null;
+            // Profile profile = null;
 
             if (!(id > 0))
             {
                 return BadRequest();
             }
-
+            /*
             try
             {
                 profile = _db.Profiles.First(p => p.Id == id);
@@ -97,11 +91,14 @@ namespace Matrimony.Backend.Controllers
                 _logger.LogError("Delete failed, id not found", ex);
                 return NotFound();
             }
+            */
 
             // _db.Profiles.Remove(profile);
-            _db.Entry(profile).State = EntityState.Deleted;
+            // _db.Entry(profile).State = EntityState.Deleted;
 
-            await _db.SaveChangesAsync();
+            // await _db.SaveChangesAsync();
+
+            _profileRepo.Delete(id);
 
             return Ok("Deleted the profile successfully");
         }

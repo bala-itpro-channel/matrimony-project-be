@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using Matrimony.Backend.Models;
@@ -12,6 +14,7 @@ namespace Matrimony.Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class LoginController: ControllerBase
     {
 
@@ -73,6 +76,17 @@ namespace Matrimony.Backend.Controllers
             var encodedToken = new JwtSecurityTokenHandler().WriteToken(token);
 
             return encodedToken;
+        }
+
+        [HttpPost]
+        public string Post()
+        {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+
+            var userName = claim[0].Value;
+
+            return "Welcome " + userName;
         }
 
     }
